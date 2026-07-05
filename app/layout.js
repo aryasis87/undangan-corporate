@@ -15,22 +15,38 @@ const body = Inter({
   display: 'swap',
 });
 
+const __jsonld = {"@context":"https://schema.org","@type":"Event","name":"TechNusantara Summit 2026","description":"Konferensi teknologi tahunan"};
+
 export const metadata = {
-  metadataBase: new URL('https://undangan.example.com'),
-  title: config.meta.title,
-  description: config.meta.description,
+  metadataBase: new URL("https://undangan-corporate.vercel.app"),
+  title: "Undangan Acara Korporat Digital — TechNusantara Summit 2026",
+  description: "Undangan acara korporat & konferensi digital profesional. Agenda, pembicara, lokasi, dan registrasi peserta dalam satu halaman modern.",
+  applicationName: "Undangan Digital",
+  keywords: ["undangan acara perusahaan", "undangan konferensi digital", "undangan event korporat", "undangan seminar"],
+  authors: [{ name: "Undangan Digital" }],
+  creator: "Undangan Digital",
+  publisher: "Undangan Digital",
+  alternates: { canonical: "https://undangan-corporate.vercel.app" },
   openGraph: {
-    title: config.meta.title,
-    description: config.meta.description,
-    type: 'website',
-    locale: 'id_ID',
+    type: "website",
+    locale: "id_ID",
+    url: "https://undangan-corporate.vercel.app",
+    siteName: "Undangan Digital",
+    title: "Undangan Acara Korporat Digital — TechNusantara Summit 2026",
+    description: "Undangan acara korporat & konferensi digital profesional. Agenda, pembicara, lokasi, dan registrasi peserta dalam satu halaman modern.",
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Undangan Acara Korporat Digital — TechNusantara Summit 2026" }],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: config.meta.title,
-    description: config.meta.description,
+    card: "summary_large_image",
+    title: "Undangan Acara Korporat Digital — TechNusantara Summit 2026",
+    description: "Undangan acara korporat & konferensi digital profesional. Agenda, pembicara, lokasi, dan registrasi peserta dalam satu halaman modern.",
+    images: ["/og.jpg"],
   },
-  robots: { index: false, follow: false },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+  },
 };
 
 export const viewport = {
@@ -42,7 +58,8 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="id" className={`${display.variable} ${body.variable}`}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">{children}<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(__jsonld) }} />
+        </body>
     </html>
   );
 }
