@@ -18,7 +18,7 @@ const body = Inter({
 const __jsonld = {"@context":"https://schema.org","@type":"Event","name":"TechNusantara Summit 2026","description":"Konferensi teknologi tahunan"};
 
 export const metadata = {
-  metadataBase: new URL("https://corporate.pintuweb.com"),
+  metadataBase: new URL("https://undangan-corporate-delta.vercel.app"),
   title: "Undangan Acara Korporat Digital — TechNusantara Summit 2026",
   description: "Undangan acara korporat & konferensi digital profesional. Agenda, pembicara, lokasi, dan registrasi peserta dalam satu halaman modern.",
   applicationName: "Undangan Digital",
@@ -26,11 +26,11 @@ export const metadata = {
   authors: [{ name: "Undangan Digital" }],
   creator: "Undangan Digital",
   publisher: "Undangan Digital",
-  alternates: { canonical: "https://corporate.pintuweb.com" },
+  alternates: { canonical: "https://undangan-corporate-delta.vercel.app" },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://corporate.pintuweb.com",
+    url: "https://undangan-corporate-delta.vercel.app",
     siteName: "Undangan Digital",
     title: "Undangan Acara Korporat Digital — TechNusantara Summit 2026",
     description: "Undangan acara korporat & konferensi digital profesional. Agenda, pembicara, lokasi, dan registrasi peserta dalam satu halaman modern.",
