@@ -1,5 +1,11 @@
 # Undangan Digital — Corporate (Conference Website)
 
+**Demo live:** https://undangan-corporate-delta.vercel.app
+
+![Tangkapan layar](public/og.jpg)
+
+> Undangan contoh dengan data fiktif. Formulir registrasi hanya demo dan tidak mengirim data.
+
 Paradigma **paling beda**: ini **situs acara/konferensi**, bukan undangan personal bergerbang. Tidak ada "Buka Undangan" — langsung landing page yang bisa di-scroll & dinavigasi.
 
 - **NavBar** — sticky, menu anchor + menu mobile (hamburger) + tombol **Daftar**
@@ -20,3 +26,7 @@ Tema **indigo & cyan**, font **Space Grotesk + Inter**, grid hero. `page.js` ada
 npm install && npm run dev
 ```
 Semua konten di **`lib/data.js`** (objek `hero`, `agenda`, `speakers`, `sponsors`, `tickets`).
+
+---
+
+Bagian dari koleksi 8 undangan digital di [PortalUndangan](https://portal-undangan-eta.vercel.app). Dibuat oleh [PintuWeb](https://pintuweb.com), jasa pembuatan website.

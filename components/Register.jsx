@@ -4,7 +4,11 @@ import { CheckCircle2 } from 'lucide-react';
 import Reveal from './ui/Reveal';
 import config from '@/lib/data';
 
-// Form registrasi peserta (data lokal/dummy).
+// Form registrasi peserta. Ini undangan contoh: data tidak dikirim ke mana pun.
+const PESAN_URL =
+  'https://wa.me/6281339908765?text=' +
+  encodeURIComponent('Halo PintuWeb, saya mau pesan undangan acara korporat digital seperti contoh TechNusantara Summit.');
+
 export default function Register() {
   const { tickets } = config;
   const [form, setForm] = useState({ name: '', email: '', company: '', ticket: tickets[0] });
@@ -14,8 +18,6 @@ export default function Register() {
   const submit = (e) => {
     e.preventDefault();
     if (!form.name.trim() || !form.email.trim()) return;
-    // TODO: kirim ke backend/Firebase
-    console.log('Register:', form);
     setDone(true);
   };
 
@@ -35,7 +37,18 @@ export default function Register() {
             <div className="rounded-2xl bg-cream p-8 text-center text-ink">
               <CheckCircle2 size={48} className="mx-auto text-rose" />
               <p className="mt-4 font-display text-xl font-bold">Terima kasih, {form.name}!</p>
-              <p className="mt-1 text-sm text-muted">Konfirmasi pendaftaran akan dikirim ke {form.email}.</p>
+              <p className="mt-2 text-sm text-muted">
+                Ini undangan contoh, jadi pendaftaran tidak diproses dan tidak ada email yang dikirim.
+                Pada acara sungguhan, peserta langsung menerima konfirmasi dan e-tiket.
+              </p>
+              <a
+                href={PESAN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block text-sm font-semibold text-rose underline underline-offset-4 hover:text-ink"
+              >
+                Pesan undangan acara seperti ini
+              </a>
             </div>
           ) : (
             <form onSubmit={submit} className="space-y-4 rounded-2xl bg-cream p-6 text-ink md:p-8">
