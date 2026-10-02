@@ -12,32 +12,28 @@ export default function Footer() {
         <div className="grid gap-8 md:grid-cols-3">
           <div>
             <p className="font-display text-xl font-bold">{brand.name}<span className="text-gold">.</span></p>
-            <p className="mt-2 max-w-xs text-sm text-cream/60">{brand.full}</p>
+            <p className="mt-2 max-w-xs text-sm text-cream/75">{brand.full}</p>
           </div>
 
           <div>
             <p className="text-sm font-semibold text-cream/80">Navigasi</p>
             <ul className="mt-3 space-y-2">
               {nav.map((n) => (
-                <li key={n.href}><a href={n.href} className="text-sm text-cream/60 transition hover:text-gold">{n.label}</a></li>
+                <li key={n.href}><a href={n.href} className="text-sm text-cream/75 transition hover:text-gold">{n.label}</a></li>
               ))}
             </ul>
           </div>
 
           <div>
             <p className="text-sm font-semibold text-cream/80">Kontak</p>
-            <a href={`mailto:${footer.email}`} className="mt-3 inline-flex items-center gap-2 text-sm text-cream/60 transition hover:text-gold">
-              <Mail size={14} /> {footer.email}
+            <a href={`mailto:${footer.email}`} className="mt-3 inline-flex items-center gap-2 text-sm text-cream/75 transition hover:text-gold">
+              <Mail size={14} aria-hidden="true" /> {footer.email}
             </a>
-            <div className="mt-4 flex gap-4">
-              {footer.socials.map((s) => (
-                <a key={s.label} href={s.href} className="text-sm text-cream/60 transition hover:text-gold">{s.label}</a>
-              ))}
-            </div>
+            <p className="mt-4 max-w-xs text-xs text-cream/70">{footer.note}</p>
           </div>
         </div>
 
-        <div className="mt-10 border-t border-cream/10 pt-6 text-center text-xs text-cream/40">
+        <div className="mt-10 border-t border-cream/10 pt-6 text-center text-xs text-cream/70">
           © {year} {footer.org}. All rights reserved.
         </div>
       </div>

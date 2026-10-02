@@ -7,7 +7,7 @@ import config from '@/lib/data';
 // Form registrasi peserta. Ini undangan contoh: data tidak dikirim ke mana pun.
 const PESAN_URL =
   'https://wa.me/6281339908765?text=' +
-  encodeURIComponent('Halo PintuWeb, saya mau pesan undangan acara korporat digital seperti contoh TechNusantara Summit.');
+  encodeURIComponent('Halo PintuWeb, saya mau pesan situs acara korporat seperti contoh Temu Rekayasa Nusa.');
 
 export default function Register() {
   const { tickets } = config;
@@ -29,13 +29,13 @@ export default function Register() {
         <Reveal className="text-center">
           <p className="text-sm font-semibold uppercase tracking-wide text-gold">Registrasi</p>
           <h2 className="mt-2 font-display text-3xl font-bold md:text-4xl">Amankan Tiketmu</h2>
-          <p className="mt-3 text-sm text-cream/70">Isi formulir di bawah untuk mendaftar sebagai peserta.</p>
+          <p className="mt-3 text-sm text-cream/80">Isi formulir di bawah untuk mendaftar sebagai peserta.</p>
         </Reveal>
 
         <Reveal delay={0.1} className="mt-10">
           {done ? (
-            <div className="rounded-2xl bg-cream p-8 text-center text-ink">
-              <CheckCircle2 size={48} className="mx-auto text-rose" />
+            <div className="rounded-2xl bg-cream p-8 text-center text-ink" role="status">
+              <CheckCircle2 size={48} className="mx-auto text-rose" aria-hidden="true" />
               <p className="mt-4 font-display text-xl font-bold">Terima kasih, {form.name}!</p>
               <p className="mt-2 text-sm text-muted">
                 Ini undangan contoh, jadi pendaftaran tidak diproses dan tidak ada email yang dikirim.
@@ -53,11 +53,11 @@ export default function Register() {
           ) : (
             <form onSubmit={submit} className="space-y-4 rounded-2xl bg-cream p-6 text-ink md:p-8">
               <div className="grid gap-4 sm:grid-cols-2">
-                <input name="name" value={form.name} onChange={handle} placeholder="Nama lengkap" className={field} required />
-                <input type="email" name="email" value={form.email} onChange={handle} placeholder="Email" className={field} required />
+                <input name="name" aria-label="Nama lengkap" autoComplete="name" value={form.name} onChange={handle} placeholder="Nama lengkap" className={field} required />
+                <input type="email" name="email" aria-label="Email" autoComplete="email" value={form.email} onChange={handle} placeholder="Email" className={field} required />
               </div>
-              <input name="company" value={form.company} onChange={handle} placeholder="Perusahaan / Institusi" className={field} />
-              <select name="ticket" value={form.ticket} onChange={handle} className={field}>
+              <input name="company" aria-label="Perusahaan atau institusi" autoComplete="organization" value={form.company} onChange={handle} placeholder="Perusahaan / Institusi" className={field} />
+              <select name="ticket" aria-label="Jenis tiket" value={form.ticket} onChange={handle} className={field}>
                 {tickets.map((t) => <option key={t} value={t}>{t}</option>)}
               </select>
               <button type="submit" className="w-full rounded-full bg-rose py-3.5 text-sm font-semibold text-cream transition hover:bg-ink">

@@ -1,32 +1,51 @@
-# Undangan Digital — Corporate (Conference Website)
+# Situs Acara — Temu Rekayasa Nusa 2027
+
+Situs konferensi, bukan undangan bersampul: navbar sticky, hero dengan hitung mundur, agenda dua hari bertab, pembicara, slot logo sponsor per tingkat, venue, dan formulir pendaftaran.
 
 **Demo live:** https://undangan-corporate-delta.vercel.app
 
 ![Tangkapan layar](public/og.jpg)
 
-> Undangan contoh dengan data fiktif. Formulir registrasi hanya demo dan tidak mengirim data.
+> Contoh dengan data fiktif: nama, tempat, dan nomor rekening tidak sungguhan. Formulir hanya demo dan mengatakannya terus terang. Foto adalah placeholder berlabel yang siap diganti.
 
-Paradigma **paling beda**: ini **situs acara/konferensi**, bukan undangan personal bergerbang. Tidak ada "Buka Undangan" — langsung landing page yang bisa di-scroll & dinavigasi.
+## Fitur
 
-- **NavBar** — sticky, menu anchor + menu mobile (hamburger) + tombol **Daftar**
-- **Hero** — judul + CTA "Daftar Sekarang" / "Tambah ke Kalender" + countdown
-- **Stats** — angka peserta/pembicara/sesi/hari
-- **About** — tentang acara + poin highlight
-- **Agenda** — rundown sesi (waktu, judul, pembicara, track)
-- **Speakers** — grid kartu pembicara
-- **Sponsors** — logo berjenjang (Platinum/Gold/Silver)
-- **LocationSection** — venue + peta + petunjuk arah
-- **Register** — form registrasi peserta (tipe tiket)
-- **Footer** — brand, navigasi, kontak, sosial, copyright
+- Agenda dua hari (tab yang bisa dioperasikan papan ketik)
+- Statistik dihitung otomatis dari agenda & pembicara
+- Pembicara, slot sponsor berlabel, lokasi
+- Pendaftaran peserta — mode demo, terus terang tidak memproses data
+- Halaman 404 bergaya sendiri
 
-Tema **indigo & cyan**, font **Space Grotesk + Inter**, grid hero. `page.js` adalah server component; interaktivitas di komponen client (NavBar/Hero/Register). Responsif terverifikasi (320/375/768px).
+## Mengganti isi
 
-## Menjalankan
+Seluruh isi ada di satu file: `lib/data.js` (nama, tanggal, acara, galeri, musik, agenda, pembicara, sponsor). Komponen tidak perlu disentuh.
+
+- **Tanggal:** ubah teks tanggal *dan* nilai ISO (`mainDate`, `start`, `end`) — hitung mundur dan tombol kalender memakai nilai ISO.
+- **Peta:** contoh menunjuk area kota; ganti `q=` di `location.mapEmbed` dan `mapLink` dengan nama tempat atau koordinat.
+- **Foto:** timpa berkas di `public/images/` dengan nama yang sama (potret 3:4, atau persegi untuk berkas yang memang persegi).
+
+## Gambar & kredit
+
+- `public/images/*.webp` — placeholder berlabel buatan sendiri (bukan foto stok), digambar ulang dari SVG agar tidak bergantung pada layanan luar.
+
+
+## Teknologi
+
+- Next.js 15.5 (App Router) dan React 19
+- Tailwind CSS v4 (token tema di `app/globals.css`)
+- Framer Motion, lucide-react
+- Font: Space Grotesk, Inter (next/font)
+- SEO: metadata, Open Graph, JSON-LD (WebSite), sitemap.xml, robots.txt
+
+## Menjalankan secara lokal
+
 ```bash
-npm install && npm run dev
+npm install
+npm run dev
 ```
-Semua konten di **`lib/data.js`** (objek `hero`, `agenda`, `speakers`, `sponsors`, `tickets`).
+
+Buka http://localhost:3000.
 
 ---
 
-Bagian dari koleksi 8 undangan digital di [PortalUndangan](https://portal-undangan-eta.vercel.app). Dibuat oleh [PintuWeb](https://pintuweb.com), jasa pembuatan website.
+Bagian dari koleksi 8 undangan digital di [PortalUndangan](https://portal-undangan-eta.vercel.app). Dibuat oleh [PintuWeb](https://www.pintuweb.com), jasa pembuatan website.

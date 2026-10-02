@@ -12,11 +12,12 @@ export default function LocationSection() {
           <p className="text-sm font-semibold uppercase tracking-wide text-rose">Venue</p>
           <h2 className="mt-2 font-display text-3xl font-bold text-ink md:text-4xl">{location.venue}</h2>
           <p className="mt-4 inline-flex items-start gap-2 text-muted">
-            <MapPin size={18} className="mt-0.5 shrink-0 text-rose" /> {location.address}
+            <MapPin size={18} className="mt-0.5 shrink-0 text-rose" aria-hidden="true" /> {location.address}
           </p>
+          {location.note && <p className="mt-1 text-xs text-muted">{location.note}</p>}
           <div className="mt-6">
             <a href={location.mapLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-rose px-6 py-3 text-sm font-semibold text-cream transition hover:bg-rose-deep">
-              <Navigation size={16} /> Petunjuk Arah
+              <Navigation size={16} aria-hidden="true" /> Petunjuk Arah
             </a>
           </div>
         </Reveal>

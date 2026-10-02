@@ -19,18 +19,18 @@ export default function NavBar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors ${
-        scrolled ? 'bg-cream/90 shadow-sm backdrop-blur' : 'bg-transparent'
+        scrolled || open ? 'bg-cream/95 shadow-sm backdrop-blur' : 'bg-transparent'
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-        <a href="#top" className="font-display text-lg font-bold text-rose-deep">
+        <a href="#top" className={`font-display text-lg font-bold transition-colors ${scrolled ? 'text-rose-deep' : 'text-cream'}`}>
           {brand.name}<span className="text-gold">.</span>
         </a>
 
         {/* Desktop */}
         <div className="hidden items-center gap-8 md:flex">
           {nav.map((n) => (
-            <a key={n.href} href={n.href} className="text-sm font-medium text-muted transition hover:text-rose">
+            <a key={n.href} href={n.href} className={`text-sm font-medium transition ${scrolled ? 'text-muted hover:text-rose' : 'text-cream/85 hover:text-cream'}`}>
               {n.label}
             </a>
           ))}
@@ -40,8 +40,8 @@ export default function NavBar() {
         </div>
 
         {/* Mobile toggle */}
-        <button className="text-ink md:hidden" onClick={() => setOpen((v) => !v)} aria-label="Menu" aria-expanded={open}>
-          {open ? <X size={24} /> : <Menu size={24} />}
+        <button className={`md:hidden ${scrolled || open ? 'text-ink' : 'text-cream'}`} onClick={() => setOpen((v) => !v)} aria-label={open ? 'Tutup menu' : 'Buka menu'} aria-expanded={open}>
+          {open ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
         </button>
       </nav>
 

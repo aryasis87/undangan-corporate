@@ -15,11 +15,11 @@ const body = Inter({
   display: 'swap',
 });
 
-const __jsonld = {"@context":"https://schema.org","@type":"Event","name":"TechNusantara Summit 2026","description":"Konferensi teknologi tahunan"};
+const __jsonld = {"@context":"https://schema.org","@type":"WebSite","name":"Temu Rekayasa Nusa 2027 — situs acara contoh","description":"Contoh situs acara korporat: agenda dua hari, pembicara, slot sponsor, lokasi, dan pendaftaran peserta.","inLanguage":"id"};
 
 export const metadata = {
   metadataBase: new URL("https://undangan-corporate-delta.vercel.app"),
-  title: "Undangan Acara Korporat Digital — TechNusantara Summit 2026",
+  title: "Situs Acara Korporat Digital — Temu Rekayasa Nusa 2027",
   description: "Undangan acara korporat & konferensi digital profesional. Agenda, pembicara, lokasi, dan registrasi peserta dalam satu halaman modern.",
   applicationName: "Undangan Digital",
   keywords: ["undangan acara perusahaan", "undangan konferensi digital", "undangan event korporat", "undangan seminar"],
@@ -32,13 +32,13 @@ export const metadata = {
     locale: "id_ID",
     url: "https://undangan-corporate-delta.vercel.app",
     siteName: "Undangan Digital",
-    title: "Undangan Acara Korporat Digital — TechNusantara Summit 2026",
+    title: "Situs Acara Korporat Digital — Temu Rekayasa Nusa 2027",
     description: "Undangan acara korporat & konferensi digital profesional. Agenda, pembicara, lokasi, dan registrasi peserta dalam satu halaman modern.",
-    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Undangan Acara Korporat Digital — TechNusantara Summit 2026" }],
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Situs Acara Korporat Digital — Temu Rekayasa Nusa 2027" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Undangan Acara Korporat Digital — TechNusantara Summit 2026",
+    title: "Situs Acara Korporat Digital — Temu Rekayasa Nusa 2027",
     description: "Undangan acara korporat & konferensi digital profesional. Agenda, pembicara, lokasi, dan registrasi peserta dalam satu halaman modern.",
     images: ["/og.jpg"],
   },
