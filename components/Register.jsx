@@ -6,7 +6,7 @@ import config from '@/lib/data';
 
 // Form registrasi peserta. Ini undangan contoh: data tidak dikirim ke mana pun.
 const PESAN_URL =
-  'https://wa.me/6281339908765?text=' +
+  'https://wa.me/6285190931399?text=' +
   encodeURIComponent('Halo PintuWeb, saya mau pesan situs acara korporat seperti contoh Temu Rekayasa Nusa.');
 
 export default function Register() {
